@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 public class ProductEventScannerController {
 
@@ -18,9 +20,7 @@ public class ProductEventScannerController {
     private ProductEventProducer productEventProducer;
 
     @PostMapping("/v1/productevent")
-    public ResponseEntity<ProductScannerEvent> saveProductEvent(@RequestBody ProductScannerEvent productScannerEvent) throws JsonProcessingException {
-
-
+    public ResponseEntity<ProductScannerEvent> saveProductEvent( @RequestBody  @Valid ProductScannerEvent productScannerEvent) throws JsonProcessingException {
 
         //productEventProducer.sendProductEvent(productScannerEvent);
 

@@ -44,9 +44,7 @@ public class ProductEventScannerControllerTest {
         Map<String, Object> map = new HashMap<>(KafkaTestUtils.consumerProps("groups", "true",
                 embeddedKafkaBroker ));
         consumer = new DefaultKafkaConsumerFactory<>(map, new LongDeserializer(), new StringDeserializer()).createConsumer();
-
         embeddedKafkaBroker.consumeFromAllEmbeddedTopics(consumer);
-
     }
     @Test
     void postProductEvent() {

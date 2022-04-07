@@ -6,7 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 
 @NoArgsConstructor
@@ -16,6 +17,8 @@ import javax.persistence.Entity;
 public class ProductScannerEvent {
 
     private Long productEventId;
+    @NotNull
+    @Valid
     private Product product;
 
 }
